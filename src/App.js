@@ -12,7 +12,7 @@ globalThis.Buffer = Buffer;
 import kp from './keypair.json';
 
 // Constants
-const TWITTER_HANDLE = '_buildspace';
+const TWITTER_HANDLE = 'adaihueze';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 // SystemProgram is a reference to the Solana runtime!
