@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
+
 import twitterLogo from './assets/twitter-logo.svg';
+
 import './App.css';
 
 // Constants
@@ -6,6 +9,38 @@ const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
+  useEffect(() => {
+    const checkIfWalletIsConnected = async () => {
+      try {
+        const { solana } = window;
+  
+        if (solana && solana.isPhantom) {
+          console.log('Phantom wallet found!');
+  
+          const response = await solana.connect({ onlyIfTrusted: true });
+  
+          console.log(
+            'Connected with Public Key:',
+            response.publicKey.toString()
+          );
+          return;
+        }
+  
+        alert('Solana object not found! Get a Phantom Wallet 👻');
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    const onLoad = async () => {
+      await checkIfWalletIsConnected();
+    };
+
+    window.addEventListener('load', onLoad);
+
+    return () => window.removeEventListener('load', onLoad);
+  }, []);
+
   return (
     <div className="App">
       <div className="container">
