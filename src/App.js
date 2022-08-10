@@ -5,8 +5,6 @@ import { Program, AnchorProvider, web3 } from '@project-serum/anchor';
 import idl from './idl.json';
 import kp from './keypair.json';
 
-import twitterLogo from './assets/twitter-logo.svg';
-
 import './App.css';
 
 const kpValues = Object.values(kp._keypair.secretKey);
@@ -50,8 +48,6 @@ const App = () => {
           setWalletAddress(response.publicKey.toString());
           return;
         }
-
-        alert('Solana object not found! Get a Phantom Wallet 👻');
       } catch (error) {
         console.error(error);
       }
@@ -174,7 +170,7 @@ const App = () => {
         <form onSubmit={handleOnSubmit}>
           <input
             type="text"
-            placeholder="Enter gif link!"
+            placeholder="Enter your The Office favorite gif link!"
             value={inputValue}
             onChange={onInputChange}
           />
@@ -209,13 +205,24 @@ const App = () => {
             : renderConnectedContainer()}
         </div>
         <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          <p>
+            built with ❤️ from{' '}
+            <a
+              className="footer-link"
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/diegosano"
+            >
+              Diego
+            </a>{' '}
+            on{' '}
+            <a
+              className="footer-link"
+              href={TWITTER_LINK}
+              target="_blank"
+              rel="noreferrer"
+            >{`@${TWITTER_HANDLE}`}</a>
+          </p>
         </div>
       </div>
     </div>

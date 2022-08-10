@@ -74,7 +74,9 @@
   width: 100%;
   bottom: 0;
   left: 0;
-  padding-bottom: 45px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .twitter-logo {
@@ -82,10 +84,11 @@
   height: 35px;
 }
 
-.footer-text {
+.footer-link {
   color: white;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .gif-grid {
