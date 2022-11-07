@@ -193,12 +193,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className={walletAddress ? 'authed-container' : 'container'}>
+      <div className={walletAddress ? "authed-container" : "container"}>
         <div className="header-container">
-          <p className="header">💼 The Office GIF Portal</p>
+          <p className="header">I dont have a name for the portal</p>
           <p className="sub-text">
-            A place to view and submit your The Office favorite GIF collection
-            in the metaverse ✨
+            A place to view and submit random gif you find interesting in the metaverse ✨
           </p>
           {!walletAddress
             ? renderNotConnectedContainer()
@@ -206,16 +205,16 @@ const App = () => {
         </div>
         <div className="footer-container">
           <p>
-            built with ❤️ from{' '}
+            built with ❤️ from{" "}
             <a
               className="footer-link"
               target="_blank"
               rel="noreferrer"
-              href="https://github.com/diegosano"
+              href="https://www.seunbayo.com/"
             >
-              Diego
-            </a>{' '}
-            on{' '}
+              Seunbayo
+            </a>{" "}
+            on{" "}
             <a
               className="footer-link"
               href={TWITTER_LINK}
